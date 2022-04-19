@@ -1,3 +1,2 @@
-# netcore
-Ultimate ASP.NET Core Web API
+# Ultimate ASP.NET Core Web API
 Main project
