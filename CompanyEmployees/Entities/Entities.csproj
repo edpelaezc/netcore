@@ -8,8 +8,10 @@
 
   <ItemGroup>
     <None Remove="Models\" />
+    <None Remove="ErrorModel\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="ErrorModel\" />
   </ItemGroup>
 </Project>
