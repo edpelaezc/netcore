@@ -9,9 +9,11 @@
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="ErrorModel\" />
+    <None Remove="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ErrorModel\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>

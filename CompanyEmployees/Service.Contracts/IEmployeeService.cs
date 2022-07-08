@@ -1,8 +1,13 @@
 ﻿using System;
+using Shared.DataTransferObjects;
+
 namespace Service.Contracts
 {
 	public interface IEmployeeService
 	{
+		IEnumerable<EmployeeDTO> GetEmployees(Guid companyId, bool trackChanges);
+
+		EmployeeDTO GetEmployee(Guid companyId, Guid id, bool trackChanges);
 	}
 }
 
