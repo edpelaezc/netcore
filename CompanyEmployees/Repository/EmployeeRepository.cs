@@ -16,9 +16,17 @@ namespace Repository
 			.ToList();
 
 
-		public Employee GetEmployee(Guid companyId, Guid id, bool trackChanges) =>
+#pragma warning disable CS8603 // Possible null reference return.
+        public Employee GetEmployee(Guid companyId, Guid id, bool trackChanges) =>
 			FindByCondition(e => e.CompanyId.Equals(companyId) && e.Id.Equals(id), trackChanges)
 			.SingleOrDefault();
+#pragma warning restore CS8603 // Possible null reference return.
+
+        public void CreateEmployeeForCompany(Guid companyId, Employee employee)
+		{
+			employee.CompanyId = companyId;
+			Create(employee);
+		}
 	}
 }
 

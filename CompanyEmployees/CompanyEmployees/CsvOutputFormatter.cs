@@ -40,8 +40,12 @@ public class CsvOutputFormatter : TextOutputFormatter
 		}
 		else
 		{
-			FormatCsv(buffer, (CompanyDTO)context.Object);
-		}
+#pragma warning disable CS8604 // Possible null reference argument.
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+            FormatCsv(buffer, (CompanyDTO)context.Object);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+#pragma warning restore CS8604 // Possible null reference argument.
+        }
 
 		await response.WriteAsync(buffer.ToString());
 	}

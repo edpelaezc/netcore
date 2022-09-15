@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="Microsoft.AspNetCore.Mvc.Core" />
     <None Remove="Controllers\" />
+    <None Remove="ModelBinders\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
@@ -19,5 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="ModelBinders\" />
   </ItemGroup>
 </Project>
