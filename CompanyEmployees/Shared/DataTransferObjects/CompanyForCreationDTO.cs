@@ -1,6 +1,6 @@
-﻿using System;
-namespace Shared.DataTransferObjects
-{
-    public record CompanyForCreationDTO(string Name, string Address, string Country, IEnumerable<EmployeeForCreationDTO> Employees);
-}
+﻿namespace Shared.DataTransferObjects;
 
+public record CompanyForCreationDTO : CompanyForManipulationDTO
+{
+    public IEnumerable<EmployeeForCreationDTO>? Employees { get; init; }
+}

@@ -1,6 +1,3 @@
-﻿using System;
-namespace Shared.DataTransferObjects
-{
-    public record EmployeeForUpdateDTO(string Name, int Age, string Position);
-}
+﻿namespace Shared.DataTransferObjects;
 
+public record EmployeeForUpdateDTO : EmployeeForManipulationDTO;
