@@ -12,6 +12,7 @@
     <None Remove="ModelBinders\" />
     <None Remove="Microsoft.AspNetCore.JsonPatch" />
     <None Remove="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
+    <None Remove="ActionFilters\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
@@ -25,5 +26,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="ModelBinders\" />
+    <Folder Include="ActionFilters\" />
   </ItemGroup>
 </Project>

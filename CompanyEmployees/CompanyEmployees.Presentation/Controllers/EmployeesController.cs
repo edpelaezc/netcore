@@ -1,4 +1,5 @@
 ﻿using System;
+using CompanyEmployees.Presentation.ActionFilters;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
@@ -29,15 +30,9 @@ namespace CompanyEmployees.Presentation.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> CreateEmployeeForCompany(Guid companyId, [FromBody] EmployeeForCreationDTO employee)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> CreateEmployeeForCompany(Guid companyId, [FromBody] EmployeeForCreationDTO employee)
         {
-			if (employee is null)
-				return BadRequest("EmployeeForCreationDTO object is null");
-
-			// atributte validations
-			if (!ModelState.IsValid)
-				return UnprocessableEntity(ModelState);
-
 			var employeeResponse = await _service.EmployeeService.CreateEmployeeForCompanyAsync(companyId, employee, false);
 
 			return CreatedAtRoute("GetEmployeeForCompany", new { companyId, id = employeeResponse.Id}, employeeResponse);
@@ -51,14 +46,9 @@ namespace CompanyEmployees.Presentation.Controllers
 		}
 
         [HttpPut("{id:guid}")]
-		public async Task<IActionResult> UpdateEmployeeForCompany(Guid companyId, Guid id, [FromBody] EmployeeForUpdateDTO employee)
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UpdateEmployeeForCompany(Guid companyId, Guid id, [FromBody] EmployeeForUpdateDTO employee)
 		{
-			if (employee is null)
-				return BadRequest("EmployeeForUpdateDTO object is null");
-
-			if (!ModelState.IsValid)
-				return UnprocessableEntity(ModelState);
-
 			await _service.EmployeeService.UpdateEmployeeForCompanyAsync(companyId, id, employee, compTrackChanges: false, empTrackChanges: true);
 
 			return NoContent();
