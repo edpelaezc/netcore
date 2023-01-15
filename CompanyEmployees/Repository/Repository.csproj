@@ -15,12 +15,16 @@
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Configuration\" />
     <None Remove="Extensions\" />
+    <None Remove="System.Linq.Dynamic.Core" />
+    <None Remove="Extensions\Utility\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.24" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Extensions\Utility\" />
   </ItemGroup>
 </Project>
