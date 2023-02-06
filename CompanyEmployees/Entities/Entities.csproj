@@ -10,10 +10,12 @@
     <None Remove="Models\" />
     <None Remove="ErrorModel\" />
     <None Remove="Exceptions\" />
+    <None Remove="LinkModels\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ErrorModel\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="LinkModels\" />
   </ItemGroup>
 </Project>

@@ -20,6 +20,8 @@ namespace Shared.RequestFeatures
         }
 
         public string? OrderBy { get; set; }
+
+        public string? Fields { get; set; }
     }
 }
 
