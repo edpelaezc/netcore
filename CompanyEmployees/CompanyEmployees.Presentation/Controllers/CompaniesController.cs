@@ -15,7 +15,15 @@ namespace CompanyEmployees.Presentation.Controllers
 
 		public CompaniesController(IServiceManager service) => _service = service;
 
-		[HttpGet]
+        [HttpOptions]
+        public IActionResult GetCompaniesOptions()
+        {
+            Response.Headers.Add("Allow", "GET, OPTIONS, POST, PUT, DELETE");
+
+            return Ok();
+        }
+
+        [HttpGet]
 		public async Task<IActionResult> GetCompanies()
         {
 			var companies = await _service.CompanyService.GetAllCompaniesAsync(trackChanges: false);
