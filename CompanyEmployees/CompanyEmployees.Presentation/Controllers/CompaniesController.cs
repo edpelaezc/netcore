@@ -23,8 +23,8 @@ namespace CompanyEmployees.Presentation.Controllers
             return Ok();
         }
 
-        [HttpGet]
-		public async Task<IActionResult> GetCompanies()
+        [HttpGet(Name = "GetCompanies")]
+        public async Task<IActionResult> GetCompanies()
         {
 			var companies = await _service.CompanyService.GetAllCompaniesAsync(trackChanges: false);
 
@@ -39,8 +39,8 @@ namespace CompanyEmployees.Presentation.Controllers
 			return Ok(company);
         }
 
-		[HttpPost]
-		[ServiceFilter(typeof(ValidationFilterAttribute))]
+        [HttpPost(Name = "CreateCompany")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
 		public async Task<IActionResult> CreateCompany([FromBody] CompanyForCreationDTO company)
         {
 			var createdCompany = await _service.CompanyService.CreateCompanyAsync(company);
