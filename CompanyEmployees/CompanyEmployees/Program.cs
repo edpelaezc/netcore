@@ -27,6 +27,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IDataShaper<EmployeeDTO>, DataShaper<EmployeeDTO>>();
 builder.Services.AddScoped<IEmployeeLinks, EmployeeLinks>();
 
+builder.Services.ConfigureVersioning();
+
 builder.Services.AddControllers(config => {
 	config.RespectBrowserAcceptHeader = true;
 	config.ReturnHttpNotAcceptable = true;
