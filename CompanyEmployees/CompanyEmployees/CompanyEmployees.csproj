@@ -24,6 +24,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Utility\" />
+    <None Remove="AspNetCoreRateLimit" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ContextFactory\" />
@@ -35,5 +36,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
   </ItemGroup>
 </Project>
