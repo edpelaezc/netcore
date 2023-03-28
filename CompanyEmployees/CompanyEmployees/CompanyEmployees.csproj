@@ -25,6 +25,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Utility\" />
     <None Remove="AspNetCoreRateLimit" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ContextFactory\" />
@@ -37,5 +38,6 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.4" />
   </ItemGroup>
 </Project>
