@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 
 namespace CompanyEmployees.Presentation.Controllers;
 
 [Route("api/companies")]
+[Authorize]
 [ApiController]
 public class CompaniesV2Controller : ControllerBase
 {

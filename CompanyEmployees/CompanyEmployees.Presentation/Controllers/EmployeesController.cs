@@ -7,11 +7,13 @@ using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 using System.Text.Json;
 using Entities.LinkModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CompanyEmployees.Presentation.Controllers
 {
 	[Route("api/companies/{companyId}/employees")]
-	[ApiController]
+    [Authorize]
+    [ApiController]
 	public class EmployeesController : ControllerBase
 	{
 		private readonly IServiceManager _service;
