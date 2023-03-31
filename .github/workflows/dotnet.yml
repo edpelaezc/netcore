@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -23,3 +23,5 @@ jobs:
       run: dotnet build --no-restore ./CompanyEmployees/
     - name: Test
       run: dotnet test --no-build --verbosity normal ./CompanyEmployees/
+    - name: Publish
+      run: dotnet publish ./CompanyEmployees/CompanyEmployees.csproj -c Release -o website
