@@ -39,6 +39,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
 builder.Services.ConfigureJWT(builder.Configuration);
+builder.Services.ConfigureSwagger();
 
 builder.Services.AddControllers(config => {
 	config.RespectBrowserAcceptHeader = true;
@@ -84,6 +85,13 @@ app.UseHttpCacheHeaders();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSwagger();
+app.UseSwaggerUI(s =>
+{
+    s.SwaggerEndpoint("/swagger/v1/swagger.json", "Ed API v1");
+    s.SwaggerEndpoint("/swagger/v2/swagger.json", "Ed API v2");
+});
 
 app.MapControllers();
 
