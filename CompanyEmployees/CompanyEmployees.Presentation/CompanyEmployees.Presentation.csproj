@@ -6,40 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-      <DocumentationFile>CompanyEmployees.Presentation.xml</DocumentationFile>
-      <OutputPath></OutputPath>
-      <NoWarn>1701;1702;1591</NoWarn>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;1591</NoWarn>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Microsoft.AspNetCore.Mvc.Core" />
-    <None Remove="Controllers\" />
-    <None Remove="ModelBinders\" />
-    <None Remove="Microsoft.AspNetCore.JsonPatch" />
-    <None Remove="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
-    <None Remove="ActionFilters\" />
-    <None Remove="Microsoft.AspNetCore.Mvc.Versioning" />
-    <None Remove="Marvin.Cache.Headers" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
-    <PackageReference Include="Marvin.Cache.Headers" Version="6.1.0" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj" />
-    <ProjectReference Include="..\Entities\Entities.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="ModelBinders\" />
-    <Folder Include="ActionFilters\" />
-  </ItemGroup>
+
 </Project>

@@ -6,27 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Models\" />
-    <None Remove="ErrorModel\" />
-    <None Remove="Exceptions\" />
-    <None Remove="LinkModels\" />
-    <None Remove="Microsoft.AspNetCore.Mvc.Abstractions" />
-    <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
-    <None Remove="ConfigurationModels\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ErrorModel\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="LinkModels\" />
-    <Folder Include="ConfigurationModels\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.csproj" />
-  </ItemGroup>
 </Project>

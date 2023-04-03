@@ -1,11 +1,9 @@
-﻿using System;
-namespace Entities.Exceptions
+﻿namespace Entities.Exceptions;
+
+public sealed class IdParametersBadRequestException : BadRequestException
 {
-	public sealed class IdParametersBadRequestException : BadRequestException
+	public IdParametersBadRequestException()
+		: base("Parameter ids is null")
 	{
-		public IdParametersBadRequestException() : base("Parameters ids is null")
-		{
-		}
 	}
 }
-
