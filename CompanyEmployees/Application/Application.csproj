@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Commands\" />
+    <None Remove="Queries\" />
+    <None Remove="Handlers\" />
+    <None Remove="Queries\Company\" />
+    <None Remove="Handlers\Company\" />
+    <None Remove="Commands\Company\" />
+    <None Remove="Notifications\" />
+    <None Remove="Notifications\Company\" />
+    <None Remove="Validators\" />
+    <None Remove="Validators\Company\" />
+    <None Remove="Behaviors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="Queries\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Queries\Company\" />
+    <Folder Include="Handlers\Company\" />
+    <Folder Include="Commands\Company\" />
+    <Folder Include="Notifications\" />
+    <Folder Include="Notifications\Company\" />
+    <Folder Include="Validators\" />
+    <Folder Include="Validators\Company\" />
+    <Folder Include="Behaviors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\Contracts\Contracts.csproj" />
+  </ItemGroup>
+</Project>
