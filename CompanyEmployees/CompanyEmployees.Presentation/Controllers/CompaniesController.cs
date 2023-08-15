@@ -10,7 +10,7 @@ using Shared.DataTransferObjects;
 namespace CompanyEmployees.Presentation.Controllers
 {
     [Route("api/companies")]
-	[Authorize]
+	//[Authorize]
 	[ApiController]
     [ApiExplorerSettings(GroupName = "v1")]
     //[ResponseCache(CacheProfileName = "120SecondsDuration")]

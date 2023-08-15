@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using NLog;
 using Service.DataShaping;
 using Shared.DataTransferObjects;
+using Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -95,7 +96,7 @@ app.UseSwaggerUI(s =>
 
 app.MapControllers();
 
-app.Run();
+app.MigrateDatabase().Run();
 
 NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter() =>
     new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()

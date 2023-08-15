@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=EdSQLonDocker2022!
+    restart: always
+  companyemployees:
+    depends_on:
+      - db
+    image: ${DOCKER_REGISTRY-}companyemployees:runtime
+    ports:
+      - "8080:5000"
+      - "8081:443"
+    environment: 
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=awesomepass
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+      - SECRET=EdPelaezAPISecret
+      - ASPNETCORE_URLS=https://+:5001;http://+:5000
+    volumes:
+      - ${HOME}/.aspnet/https:/https/
+    build:
+      context: .      
