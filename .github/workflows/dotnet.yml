@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore ./CompanyEmployees/
+      run: dotnet restore ./CompanyEmployees/CompanyEmployees.sln
     - name: Build
-      run: dotnet build --no-restore ./CompanyEmployees/
+      run: dotnet build --no-restore ./CompanyEmployees/CompanyEmployees.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./CompanyEmployees/
+      run: dotnet test --no-build --verbosity normal ./CompanyEmployees/CompanyEmployees.sln
